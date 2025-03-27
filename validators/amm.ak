@@ -171,7 +171,7 @@ validator amm {
   }
 
   mint(redeemer: AmmRedeemer, amm_policy_id: PolicyId, tx: Transaction) {
-    expect redeemer == CreatePool || redeemer == Deposit
+    expect redeemer == CreatePool
     let Transaction { mint, outputs, .. } = tx
     expect [amm_output, ..] = outputs
     let x =
@@ -436,7 +436,7 @@ test test_deposit() {
     #"122469f4894e616d69a4f9303598b073b8024ef868f670ae98bda107"
   let tx = get_test_deposit_tx(amm_address, amm_script_hash, out_ref)
   expect amm.spend(None, Deposit, out_ref, tx)
-  amm.mint(Deposit, amm_script_hash, tx)
+  amm.mint(CreatePool, amm_script_hash, tx)
 }
 
 test test_withdraw() {
@@ -447,5 +447,5 @@ test test_withdraw() {
   let datum = Datum { lp_amount: 100000000, amm_policy_id: amm_script_hash }
   let tx = get_test_withdraw_tx(amm_address, amm_script_hash)
   expect amm.spend(Some(datum), Withdraw, out_ref, tx)
-  amm.mint(Deposit, amm_script_hash, tx)
+  amm.mint(CreatePool, amm_script_hash, tx)
 }
