@@ -1,0 +1,25 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lucid-evolution/lucid": "^0.4.24",
+    "@meshsdk/contract": "^1.9.0-beta.20",
+    "@meshsdk/core": "^1.9.0-beta.2",
+    "@meshsdk/core-csl": "^1.9.0-beta.19",
+    "dotenv": "^16.4.7",
+    "lucid-cardano": "^0.10.11",
+    "tsx": "^4.19.3"
+  }
+}

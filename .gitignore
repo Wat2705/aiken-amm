@@ -1,0 +1,19 @@
+# Aiken compilation artifacts
+artifacts/
+# Aiken's project working directory
+build/
+# Aiken's default documentation export
+docs/
+node_modules
+.vscode
+package-lock.json
+me.addr
+me.sk
+owner.sk
+owner.addr
+beneficiary.addr
+beneficiary.sk
+deno.lock
+src
+.github
+.env
